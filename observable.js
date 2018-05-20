@@ -3,10 +3,12 @@
 
 // data$ :: Observable<number> = Observer<numbser> => void;
 const theRiverOfHeraclitus$  = (observer) => {//这就是一个响应式变量，就是这么任性
+    observer(0);
     observer(1);
-    observer(2);
-    setTimeout(() => {
-        observer(3);
+    let state = 1;
+    setInterval(() => {
+        state++;
+        observer(state);
     }, 1000);
 };
 
