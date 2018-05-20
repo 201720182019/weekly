@@ -40,6 +40,13 @@ const flatMap = (f) => (observable) => {
 };
 //定义函数的复合
 const compose = (...args) => args.reduceRight((acc, f) => (x) => f(acc(x)));
+//从上往下，从右到左读代码
+const theShipOfTheseus$ = compose(
+    map(x => x + '->' ),
+    map(x => x * 2.718281828459)
+)(
+    theRiverOfHeraclitus$
+);
 
 const observableMorphism = compose(//可观察范畴的态射的复合
     map(x => x + 2),
