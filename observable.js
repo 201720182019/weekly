@@ -2,7 +2,7 @@
 // Observable<T> = Observer<T> => void;可观察变量的类型
 
 // data$ :: Observable<number> = Observer<numbser> => void;
-const river$  = (observer) => {//这就是一个响应式变量，就是这么任性
+const theRiverOfHeraclitus$  = (observer) => {//这就是一个响应式变量，就是这么任性
     observer(1);
     observer(2);
     setTimeout(() => {
