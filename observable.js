@@ -67,4 +67,4 @@ const mapTheRiverToTheShip = compose(
     }),
     map(x => x * 2.718281828459)
 );
-const theShipOfTheseus$ = mapTheRiverToTheShip(theRiverOfHeraclitus$);
+//const theShipOfTheseus$ = mapTheRiverToTheShip(theRiverOfHeraclitus$);
