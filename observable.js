@@ -2,7 +2,7 @@
 // Observable<T> = Observer<T> => void;可观察变量的类型
 
 // data$ :: Observable<number> = Observer<numbser> => void;
-const data$  = (observer) => {//这就是一个响应式变量，就是这么任性
+const river$  = (observer) => {//这就是一个响应式变量，就是这么任性
     observer(1);
     observer(2);
     setTimeout(() => {
@@ -13,12 +13,23 @@ const data$  = (observer) => {//这就是一个响应式变量，就是这么任
 // Morphism<T, R> = T => R;态射的类型
 // MapFunctor<T, R> = Morphism<T> => Observable<T> => Observable<R>;map函子的类型
 
-//定义值范畴到可观察变量范畴的map函子
+//定义值范畴到可观察对象范畴的map函子
 const map = (f) => (observable) => {//把值范畴的态射f提升到可观察变量范畴去
     return (observer) => {//可观察变量范畴的态射返回值当然还是可观察变量
         observable((x) => {
             observer(f(x));
         });
+    };
+};
+
+//定义flatMap函子
+const flatMap = (f) => (observable) => {
+    return (observer) => {
+        observable((x) => {
+            f(x)((y) => {
+                observer(y);
+            })
+        })
     };
 };
 //定义函数的复合
