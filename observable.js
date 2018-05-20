@@ -11,6 +11,10 @@ const theRiverOfHeraclitus$  = (observer) => {//这就是一个响应式变量�
         observer(state);
     }, 1000);
 };
+//还没发挥余热，就被消耗掉了
+// theRiverOfHeraclitus$((theStateOftheRiver) => {
+//     console.log(theStateOftheRiver);
+// });
 
 // Morphism<T, R> = T => R;态射的类型
 // MapFunctor<T, R> = Morphism<T> => Observable<T> => Observable<R>;map函子的类型
