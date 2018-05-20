@@ -1,3 +1,4 @@
+//不到一百行代码，函数式的响应机制就可以被实现了。它有别于vue，mobx通过hack赋值的过程获得的响应能力。它是pure的。在函数式的观念下，所有的赋值都是邪恶的。
 // Observer<T> = T => void;观察者的类型
 // Observable<T> = Observer<T> => void;可观察变量的类型
 
