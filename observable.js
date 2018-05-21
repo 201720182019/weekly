@@ -70,12 +70,12 @@ const theShipOfTheseus$ = compose(
 const mapTheRiverToTheShip = compose(
     flatMap(x => observer =>
         setTimeout(() => {
-            observer(x +'after half a second');
-        }, 500)
+            observer('然后又过了半秒, 船员看到了这艘船的最新状态' + x);
+        })
     ),
-    map(x => x + '->' ),
+    map(x => '->' + x),
     tap(x => {
-        console.log('船员看到了这条河:' + x);
+        console.log('一分钟后, 船员看到了这条河的最新状态:' + x);
     }),
     map(x => x * 2.718281828459)
 );
